@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christmas & New Year in Ukraine</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #8b0000, #c40000, #ff2a2a);
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+      z-index: -1;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      animation: glow 3s infinite alternate;
+    }
+
+    header p {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      max-width: 650px;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      cursor: pointer;
+      transition: 0.5s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h2 {
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .card .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease, opacity 0.6s ease;
+      opacity: 0;
+    }
+
+    .card.open .content {
+      max-height: 600px;
+      opacity: 1;
+      margin-top: 20px;
+    }
+
+    .card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://cdn-icons-png.flaticon.com/256/5825/5825747.png');
+      background-size: 80px;
+      animation: snow 18s linear infinite;
+      opacity: 0.75;
+    }
+
+    @keyframes snow {
+      from { background-position: 0 0; }
+      to { background-position: 0 1200px; }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 30px #ffd700; }
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.3rem; }
+      section { padding: 60px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="snow"></div>
+
+  <header>
+    <h1>🎄 Christmas & New Year in Ukraine 🎆</h1>
+    <p>A magical time filled with traditions, family warmth, and festive joy</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/6240/6240457.png"> Christmas in Ukraine</h2>
+      <div class="content">
+        <p>
+          Christmas in Ukraine is celebrated on January 7th (Orthodox) and December 25th (Western). Families gather on Christmas Eve for the “Sviata Vecheria” dinner with 12 traditional dishes, including <strong>kutia</strong> – a sweet wheat dish symbolizing prosperity. People sing carols, decorate homes with <em>didukh</em>, and enjoy time with family.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/6240/6240457.png"> New Year Celebration</h2>
+      <div class="content">
+        <p>
+          New Year is a widely celebrated holiday in Ukraine. Families decorate trees, exchange gifts, prepare festive meals, and watch the President’s speech at midnight. Fireworks, music, and joyful gatherings fill streets and homes, bringing warmth and hope for the new year.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png"> Holiday Traditions</h2>
+      <div class="content">
+        <p>
+          Ukrainian winter traditions include singing <em>kolyadky</em> and <em>shchedrivky</em> (carols), visiting neighbors, and sharing festive meals. Streets and homes are decorated with lights and ornaments. Many follow rituals for luck, health, and prosperity in the new year, keeping cultural heritage alive.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png"> Festive Food & Sweets</h2>
+      <div class="content">
+        <p>
+          Ukrainian holiday cuisine is rich and symbolic. Besides <strong>kutia</strong>, traditional dishes include borscht with mushrooms, varenyky, holubtsi, and fish dishes. Sweet treats like honey cakes, pampushky, and fruit preserves make the season joyful. Every dish carries meaning, from prosperity to family unity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 • Christmas & New Year in Ukraine
+  </footer>
+
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
