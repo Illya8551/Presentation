@@ -104,6 +104,36 @@
       line-height: 1.8;
     }
 
+    /* Стили для аудиоплеера */
+    .audio-player {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .audio-player h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: #ffd700;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    audio::-webkit-media-controls-panel {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50px;
+    }
+
+    audio::-webkit-media-controls-play-button {
+      background-color: #ffd700;
+      border-radius: 50%;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -135,6 +165,9 @@
     @media (max-width: 768px) {
       header h1 { font-size: 2.3rem; }
       section { padding: 60px 6%; }
+      audio {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
@@ -147,6 +180,17 @@
     <p>
       A magical time filled with traditions, family warmth, and festive joy.
     </p>
+    
+    <!-- Аудиоплеер в хедере -->
+    <div class="audio-player">
+      <h3>🎵 Holiday Music</h3>
+      <audio controls loop>
+        <!-- ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА СВОЮ С GITHUB PAGES -->
+        <source src="8471464063_1_tiktok_68b85b820e45f0_30248954 (1).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Click play to enjoy festive music</p>
+    </div>
   </header>
 
   <section>
@@ -214,10 +258,22 @@
   </footer>
 
   <script>
+    // Карточки
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', () => {
         card.classList.toggle('open');
       });
+    });
+    
+    // Автовоспроизведение музыки при первом клике
+    const audio = document.querySelector('audio');
+    let hasInteracted = false;
+    
+    document.addEventListener('click', () => {
+      if (!hasInteracted && audio) {
+        audio.play().catch(e => console.log("Автовоспроизведение не сработало:", e));
+        hasInteracted = true;
+      }
     });
   </script>
 
